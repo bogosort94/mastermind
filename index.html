@@ -15,7 +15,10 @@
     <div class="app-container">
         <header>
             <h1>MASTERMIND</h1>
-            <div id="timer" class="timer">10:00</div>
+            <div class="header-controls">
+                <button id="rules-btn" class="small-btn">RULES</button>
+                <div id="timer" class="timer">10:00</div>
+            </div>
         </header>
 
         <p class="instructions">Select a color, then click a circle in the highlighted row.</p>
@@ -35,12 +38,34 @@
         </section>
     </div>
 
+    <!-- Game Over Modal -->
     <div id="modal-overlay" class="modal-overlay hidden">
         <div class="modal">
             <h2 id="modal-title">GAME OVER</h2>
             <p id="modal-message">You ran out of time!</p>
             <div id="secret-reveal" class="secret-reveal"></div>
             <button id="modal-restart">PLAY AGAIN</button>
+        </div>
+    </div>
+
+    <!-- Rules Modal -->
+    <div id="rules-overlay" class="modal-overlay hidden">
+        <div class="modal rules-content">
+            <h2>HOW TO PLAY</h2>
+            <ul class="rules-list">
+                <li><strong>Goal:</strong> Guess the 4 distinct colors in the correct order.</li>
+                <li><strong>Limit:</strong> You have 10 turns and 10 minutes.</li>
+                <li><strong>Feedback:</strong>
+                    <div class="legend">
+                        <div class="legend-item"><span class="dot"
+                                style="background:var(--feedback-exact); opacity:1;"></span> Correct Color & Position
+                        </div>
+                        <div class="legend-item"><span class="dot"
+                                style="background:var(--feedback-partial); opacity:1;"></span> Correct Color Only</div>
+                    </div>
+                </li>
+            </ul>
+            <button id="close-rules">GOT IT</button>
         </div>
     </div>
 

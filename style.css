@@ -303,3 +303,54 @@ button:hover:not(:disabled) {
     animation: pulse-border 2s infinite;
     border: 2px solid rgba(255, 255, 255, 0.2);
 }
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.small-btn {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    background: transparent;
+    border: 1px solid var(--text-secondary);
+    color: var(--text-secondary);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.small-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+}
+
+.rules-list {
+    text-align: left;
+    margin: 20px 0;
+    list-style: none;
+    color: var(--text-secondary);
+}
+
+.rules-list li {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.rules-list strong {
+    color: var(--text-primary);
+}
+
+.legend {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+}

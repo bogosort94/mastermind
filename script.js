@@ -32,7 +32,10 @@ const ui = {
     modalTitle: document.getElementById('modal-title'),
     modalMessage: document.getElementById('modal-message'),
     modalRestart: document.getElementById('modal-restart'),
-    secretReveal: document.getElementById('secret-reveal')
+    secretReveal: document.getElementById('secret-reveal'),
+    rulesBtn: document.getElementById('rules-btn'),
+    rulesOverlay: document.getElementById('rules-overlay'),
+    closeRulesBtn: document.getElementById('close-rules')
 };
 
 // Initialization
@@ -48,6 +51,22 @@ function setupEventListeners() {
     ui.modalRestart.addEventListener('click', () => {
         ui.modal.classList.add('hidden');
         startNewGame();
+    });
+
+    // Rules Modal
+    ui.rulesBtn.addEventListener('click', () => {
+        ui.rulesOverlay.classList.remove('hidden');
+    });
+
+    ui.closeRulesBtn.addEventListener('click', () => {
+        ui.rulesOverlay.classList.add('hidden');
+    });
+
+    // Close rules on outside click
+    ui.rulesOverlay.addEventListener('click', (e) => {
+        if (e.target === ui.rulesOverlay) {
+            ui.rulesOverlay.classList.add('hidden');
+        }
     });
 }
 
